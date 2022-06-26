@@ -3,6 +3,7 @@
 package ordenacao;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,9 @@ class TesteSort
 		for (int i = 0; i < arrayPositivos.length; ++i) 
 			System.out.print(arrayPositivos[i]+ " ");
 		
-		CountingSort.sort(arrayPositivos);
+		CountingSort objSort = new CountingSort();
+		objSort.sort(arrayPositivos);
+		
 		System.out.print("\nVetor hardcoded de positivos ordenado: ");
 		
 		for (int i = 0; i < arrayPositivos.length - 1; ++i)
@@ -32,8 +35,7 @@ class TesteSort
 		for (int i = 0; i < arrayInteiros.length; ++i) 
 			System.out.print(arrayInteiros[i]+ " ");
 		
-		
-		CountingSort.sort(arrayInteiros);;
+		objSort.sort(arrayInteiros);;
 		System.out.print("\nVetor hardcoded de positivos ordenado: ");
 		
 		for (int i = 0; i < arrayInteiros.length - 1; ++i)
@@ -63,15 +65,27 @@ class TesteSort
 			System.out.print(arrayValoresAleatorios[i] + " ");
 		}
 		
-		System.out.print("\nVetor orndenado: ");
-		CountingSort.sort(arrayValoresAleatorios);
-		
+		System.out.print("\nVetor ordenado: ");
+		CountingSort objSort = new CountingSort();
+		objSort.sort(arrayValoresAleatorios);
 		
 		for (int i = 0; i < arrayValoresAleatorios.length - 1; ++i)
 		{
 			System.out.print(arrayValoresAleatorios[i]+ " ");
 			assertEquals(true, arrayValoresAleatorios[i] <= arrayValoresAleatorios[i + 1]);
 		}
+	}
+	
+	@Test
+	void passosCountingSort()
+	{
+		int arrayInteiros[] = {20, 19, 9, -3, 15, 19, 8, -4, 6, 3, -3, 13, 15, 10, 15, -5, 2, 3};
+		PassosCountingSort cs = new PassosCountingSort();
+        System.out.println("Vetor original:");
+        System.out.println(Arrays.toString(arrayInteiros));
+        cs.sort(arrayInteiros);
+        System.out.println("Vetor ordenado:");
+        System.out.println(Arrays.toString(arrayInteiros));
 	}
 
 }
