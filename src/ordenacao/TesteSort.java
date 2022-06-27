@@ -24,11 +24,11 @@ class TesteSort
 		
 		System.out.print("\nVetor hardcoded de positivos ordenado: ");
 		
-		for (int i = 0; i < arrayPositivos.length - 1; ++i)
-		{
+		for (int i = 0; i < arrayPositivos.length; ++i)
 			System.out.print(arrayPositivos[i]+ " ");
+		
+		for (int i = 0; i < arrayPositivos.length - 1; ++i)
 			assertEquals(true, arrayPositivos[i] <= arrayPositivos[i + 1]);
-		}
 		
 		int arrayInteiros[] = {90, 22, -8, -3, 15, 22, 8, -12, 6, 3, -3, 21, 15, 10, 15, -15, 2, 3};
 		System.out.print("\nVetor hardcoded de positivos e negativos desordenado: ");
@@ -38,11 +38,34 @@ class TesteSort
 		objSort.sort(arrayInteiros);;
 		System.out.print("\nVetor hardcoded de positivos ordenado: ");
 		
-		for (int i = 0; i < arrayInteiros.length - 1; ++i)
-		{
+		for (int i = 0; i < arrayInteiros.length; ++i)
 			System.out.print(arrayInteiros[i]+ " ");
+		
+		for (int i = 0; i < arrayInteiros.length - 1; ++i)
 			assertEquals(true, arrayInteiros[i] <= arrayInteiros[i + 1]);
+	}
+	
+	@Test
+	void testeChars()
+	{
+		int arrayChars[] = {'b', 'a', 'c', 'A', 'a', 'z', 'y', 'd', 'f'};
+		System.out.print("\nVetor hardcoded de chars desordenado: ");
+		
+		for (int i = 0; i < arrayChars.length; ++i) 
+			System.out.print(arrayChars[i]+ " ");
+		
+		CountingSort objSort = new CountingSort();
+		objSort.sort(arrayChars);
+		
+		System.out.print("\nVetor hardcoded de chars ordenado: ");
+		
+		for (int i = 0; i < arrayChars.length; ++i)
+		{
+			System.out.print((char)arrayChars[i]+ " ");
 		}
+		
+		for (int i = 0; i < arrayChars.length - 1; ++i)
+			assertEquals(true, arrayChars[i] <= arrayChars[i + 1]);
 	}
 	
 	@Test
@@ -69,11 +92,11 @@ class TesteSort
 		CountingSort objSort = new CountingSort();
 		objSort.sort(arrayValoresAleatorios);
 		
-		for (int i = 0; i < arrayValoresAleatorios.length - 1; ++i)
-		{
+		for (int i = 0; i < arrayValoresAleatorios.length; ++i)
 			System.out.print(arrayValoresAleatorios[i]+ " ");
+		
+		for (int i = 0; i < arrayValoresAleatorios.length - 1; ++i)
 			assertEquals(true, arrayValoresAleatorios[i] <= arrayValoresAleatorios[i + 1]);
-		}
 	}
 	
 	@Test
@@ -87,5 +110,4 @@ class TesteSort
         System.out.println("Vetor ordenado:");
         System.out.println(Arrays.toString(arrayInteiros));
 	}
-
 }
