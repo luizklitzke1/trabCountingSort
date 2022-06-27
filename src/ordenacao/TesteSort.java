@@ -19,7 +19,7 @@ class TesteSort
 		for (int i = 0; i < arrayPositivos.length; ++i) 
 			System.out.print(arrayPositivos[i]+ " ");
 		
-		CountingSort objSort = new CountingSort();
+		Counting objSort = new Counting();
 		objSort.sort(arrayPositivos);
 		
 		System.out.print("\nVetor hardcoded de positivos ordenado: ");
@@ -54,7 +54,7 @@ class TesteSort
 		for (int i = 0; i < arrayChars.length; ++i) 
 			System.out.print(arrayChars[i]+ " ");
 		
-		CountingSort objSort = new CountingSort();
+		Counting objSort = new Counting();
 		objSort.sort(arrayChars);
 		
 		System.out.print("\nVetor hardcoded de chars ordenado: ");
@@ -89,7 +89,7 @@ class TesteSort
 		}
 		
 		System.out.print("\nVetor ordenado: ");
-		CountingSort objSort = new CountingSort();
+		Counting objSort = new Counting();
 		objSort.sort(arrayValoresAleatorios);
 		
 		for (int i = 0; i < arrayValoresAleatorios.length; ++i)

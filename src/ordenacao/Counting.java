@@ -2,7 +2,7 @@
 
 package ordenacao;
 
-public class CountingSort 
+public class Counting 
 {
     public void sort(int array[]) 
     {
